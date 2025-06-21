@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de senha</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="conteudo">
+        <div class="conteudo-titulo">
+            <img class="cadeado" src="cadeado.png" alt="A imagem apresenta uma representação digital de um cadeado feito de pontos luminosos em tons de azul e roxo, sobre um fundo escuro." title="Conjunto de tecnologia de segurança cibernética - Designed by Freepik">
+            <h2 class="titulo-principal">Gerador de senhas</h2>
+            <h3 class="titulo-secundario">Gere instantaneamente uma senha aleatória e segura</h3>
+        </div>
+
+        <div class="conteudo-senha">
+            <div class="campo-senha-container">
+                <label for="Senha">Senha:</label>
+                <input name="senha" type="text" id="campo-senha" readonly>
+                <button id="copiar-senha" class="botao-copiar" title="Copiar senha">
+                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" stroke="currentColor" stroke-width="2" fill="none"/>
+                </svg>
+                    <div class="feedback-copiar" id="feedback-copiar">Copiado!</div>
+                </button>
+            </div>
+        </div>
+
+        <div class="parametro">
+            <h3 class="parametro-titulo">Personalize sua senha</h3>
+            
+            <!-- Alerta de erro -->
+            <div class="alerta-erro" id="alerta-erro">
+                ⚠️ Selecione pelo menos uma característica para gerar a senha!
+            </div>
+
+            <div class="parametro-coluna__senha">
+                <div class="parametro-senha">
+                    <h4 class="parametro-senha__titulo">Número de caracteres</h4>
+                    <div class="parametro-senha-botoes">
+                        <button class="parametro-senha__botao">-</button>
+                        <p class="parametro-senha__texto">12</p>
+                        <button class="parametro-senha__botao">+</button>
+                    </div>
+                </div>
+
+                <div class="parametro-senha">
+                    <h4 class="parametro-senha__titulo">Características da senha</h4>
+                    <div class="parametro-senha-checkbox">
+                        <input name="maiusculo" type="checkbox" class="checkbox" checked>
+                        <label for="maiusculo">Letras Maiúsculas</label>
+                    </div>
+                    <div class="parametro-senha-checkbox">
+                        <input name="minusculo" type="checkbox" class="checkbox">
+                        <label for="minusculo">Letras Minúsculas</label>
+                    </div>
+                    <div class="parametro-senha-checkbox">
+                        <input name="numero" type="checkbox" class="checkbox">
+                        <label for="numero">Números</label>
+                    </div>
+                    <div class="parametro-senha-checkbox">
+                        <input name="simbolo" type="checkbox" class="checkbox">
+                        <label for="simbolo">Símbolos</label>
+                    </div>
+                </div>
+
+                <div class="parametro-senha">
+                    <h4 class="parametro-senha__titulo">Força da senha</h4>
+                    <div class="barra"></div>
+                    <div class="forca forte"></div>
+                    <div class="parametro-senha-textos">
+                        <p>Fraca</p>
+                        <p>Média</p>
+                        <p>Forte</p>
+                    </div>
+                    <p class="entropia"></p>
+                </div>
+            </div>
+
+            <!-- Botão Gerar Nova Senha -->
+            <div class="botao-gerar-container">
+                <button id="botao-gerar" class="botao-gerar">🎲 Gerar Nova Senha</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feedback mobile -->
+    <div class="mobile-feedback" id="mobile-feedback"></div>
+
+    <script src="main.js"></script>
+</body>
+</html>
